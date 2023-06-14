@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+html,
+body {
+    height: 100%;
+    
+}
+
+.container {
+    min-height: 100%;
+}
+
+.container-fluid {
+	margin-top: 250px;
+}

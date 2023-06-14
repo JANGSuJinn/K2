@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.myproject.mapper.MemberMapper">
+
+
+	<resultMap type="com.spring.myproject.domain.MemberVO" id="memberMap">
+		<id property="memberId" column="memberId" />
+		<result property="memberId" column="memberId" />
+		<result property="memberPw" column="memberPw" />
+		<result property="memberName" column="memberName" />
+		<result property="memberMail" column="memberMail" />
+		<result property="memberAddr1" column="memberAddr1" />
+		<result property="memberAddr2" column="memberAddr2" />
+		<result property="memberAddr3" column="memberAddr3" />
+		<result property="regDate" column="regdate" />
+		<collection property="authList" resultMap="authMap">
+		</collection>
+	</resultMap>
+
+	<resultMap type="com.spring.myproject.domain.AuthVO" id="authMap">
+		<result property="memberId" column="memberId" />
+		<result property="auth" column="auth" />
+	</resultMap>
+	
+	<select id="read" resultMap="memberMap">
+		SELECT 
+		  mem.memberId,  memberPw, memberName,memberMail,memberAddr1,memberAddr2,memberAddr3 ,enabled, regdate, auth
+		FROM 
+		  tbl_member mem LEFT OUTER JOIN tbl_member_auth auth on mem.memberId = auth.memberId 
+		WHERE mem.memberId = #{memberId} 
+  	</select>
+  
+  	<insert id="memberAuth" parameterType="com.spring.myproject.domain.AuthVO">
+    	insert into tbl_member_auth(memberId, auth) values(#{memberId}, #{auth})
+   	</insert>
+
+	<!-- 회원가입 -->
+	<insert id="memberJoin" parameterType="com.spring.myproject.domain.MemberVO">
+		insert into tbl_member (memberId, memberPw,memberName, memberMail, memberAddr1, memberAddr2, memberAddr3, regDate)
+			values (#{memberId}, #{memberPw}, #{memberName}, #{memberMail}, #{memberAddr1}, #{memberAddr2},#{memberAddr3}, sysdate )
+	</insert>
+	
+	<!-- 아이디 중복검사 -->
+	<select id="idCheck" resultType="int">
+		select count(*) from tbl_member where memberId = #{memberId}
+	</select>
+	
+	<!-- 로그인 -->
+	<select id="memberLogin" resultType="com.spring.myproject.domain.MemberVO">
+		select * from tbl_member where memberId = #{memberId} and memberPw = #{memberPw}
+	</select>
+	
+	<!-- 회원정보 -->
+	<select id="get" resultType="com.spring.myproject.domain.MemberVO">
+    	select * from tbl_member where memberId = #{memberId}
+  	</select>
+  	
+  	<!-- 회원정보 수정 -->
+  	<update id="update">
+  		update tbl_member
+  		set memberPw = #{memberPw},
+  		memberName = #{memberName},
+  		memberMail = #{memberMail},
+  		memberAddr1 = #{memberAddr1},
+  		memberAddr2 = #{memberAddr2},
+  		memberAddr3 = #{memberAddr3}
+  		where memberId = #{memberId}
+  	</update>
+
+</mapper>
