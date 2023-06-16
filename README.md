@@ -32,3 +32,4 @@
 * 프레임워크 - Spring Framework, MyBatis
 ### 구조 및 설계
 #### DB 설계
+![image](https://github.com/JANGSuJinn/K2/assets/136566806/05255e79-76db-4d8c-9ce8-6ed41e42e8be)
