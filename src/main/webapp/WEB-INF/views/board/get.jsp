@@ -387,7 +387,7 @@
 	                return;
 	             }
 	         
-	         ReplyService.remove(rno,o riginalReplyer, function(result){
+	         ReplyService.remove(rno,originalReplyer, function(result){
 	            alert("삭제완료");
 	            modal.modal("hide");
 	            showList(pageNum);
