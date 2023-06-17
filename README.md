@@ -38,8 +38,9 @@
 - 글 작성, 읽기, 수정, 삭제(CRUD)
 #### 게시판
 - 글 작성, 읽기, 수정, 삭제(CRUD)
+
+## DB
 <details>
   <summary>Image</summary>
   <img width="237" height="250" alt="화면 캡처 2023-06-17 142010" src="https://github.com/leessomi/SpringProject/assets/136604400/3429a488-d21b-4375-9b8b-ca2cbb168492">
-  <img width="237" height="250" alt="화면 캡처 2023-06-17 141950" src="https://github.com/leessomi/SpringProject/assets/136604400/2590a851-c7c7-4cee-be0e-cbf3154cf07f">
 </details>
