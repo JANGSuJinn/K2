@@ -42,5 +42,5 @@
 ## DB
 <details>
   <summary>Image</summary>
-  <img width="237" height="250" alt="화면 캡처 2023-06-17 142010" src="https://github.com/leessomi/SpringProject/assets/136604400/3429a488-d21b-4375-9b8b-ca2cbb168492">
+  <img width="237" height="250" src="https://github.com/JANGSuJinn/K2/assets/136566806/fd599b7b-f454-463e-97d9-7073e19f6c52">
 </details>
