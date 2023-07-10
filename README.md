@@ -44,9 +44,3 @@
   <summary>Image</summary>
   <img width="700" height="500" src="https://github.com/JANGSuJinn/K2/assets/136566806/fd599b7b-f454-463e-97d9-7073e19f6c52">
 </details>
-
-## DB
-<details>
-  <summary>Image</summary>
-  <img width="700" height="500" src="https://github.com/JANGSuJinn/K2/assets/136566806/fd599b7b-f454-463e-97d9-7073e19f6c52">
-</details>
